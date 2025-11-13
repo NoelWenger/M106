@@ -84,3 +84,14 @@ update Bike set fk_TypId = (select TypId from Typ where Typ.Bez = 'Kinderbike'),
 update Bike set fk_TypId = (select TypId from Typ where Typ.Bez = 'Mountainbike'),  fk_MarkeId = (select MarkeId from Marke where Marke.Bez = 'Scott'  )  where Bike.Bez = 'Scale 950';
 update Bike set fk_TypId = (select TypId from Typ where Typ.Bez = 'Citybike'),      fk_MarkeId = (select MarkeId from Marke where Marke.Bez = 'Wheeler')  where Bike.Bez = 'XT EQT 24';
 update Bike set fk_TypId = (select TypId from Typ where Typ.Bez = 'Mountainbike'),  fk_MarkeId = (select MarkeId from Marke where Marke.Bez = 'Wheeler')  where Bike.Bez = 'Protron XT-10';
+
+
+--Aufgabe 1
+SELECT MarkeId, Bez
+FROM Marke;
+
+SELECT BikeId, Bez, Preis, fk_TypId, fk_MarkeId
+FROM Bike;
+
+SELECT TypId, Bez
+FROM Typ;
