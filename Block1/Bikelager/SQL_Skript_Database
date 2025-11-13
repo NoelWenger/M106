@@ -95,3 +95,9 @@ FROM Bike;
 
 SELECT TypId, Bez
 FROM Typ;
+
+
+--Aufgabe 2
+SELECT *
+FROM Bike
+WHERE fk_MarkeId = 3
