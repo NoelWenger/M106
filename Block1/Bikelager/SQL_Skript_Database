@@ -87,17 +87,79 @@ update Bike set fk_TypId = (select TypId from Typ where Typ.Bez = 'Mountainbike'
 
 
 --Aufgabe 1
-SELECT MarkeId, Bez
-FROM Marke;
+--SELECT MarkeId, Bez
+--FROM Marke;
 
-SELECT BikeId, Bez, Preis, fk_TypId, fk_MarkeId
-FROM Bike;
+--SELECT BikeId, Bez, Preis, fk_TypId, fk_MarkeId
+--FROM Bike;
 
-SELECT TypId, Bez
-FROM Typ;
+--SELECT TypId, Bez
+--FROM Typ;
 
 
 --Aufgabe 2
-SELECT *
-FROM Bike
-WHERE fk_MarkeId = 3
+--SELECT *
+--FROM Bike
+--WHERE fk_MarkeId = 3;
+
+
+--Aufgabe 3
+--SELECT Bez, Preis
+--FROM Bike
+--WHERE fk_MarkeId = 1 AND fk_TypId = 4;
+
+
+--Aufgabe 4
+--SELECT m.Bez AS Marke, b.Bez AS Bike, Preis
+--FROM Bike b
+--INNER JOIN Marke m ON m.MarkeId = b.fk_MarkeId;
+
+
+--Aufgabe 5
+--SELECT m.Bez AS Marke, b.Bez AS Bike, Preis
+--FROM Bike b
+--INNER JOIN Marke m ON m.MarkeId = b.fk_MarkeId
+--ORDER BY Preis DESC;
+
+
+--Aufgabe 6
+--SELECT m.Bez AS Marke, b.Bez AS Bike, t.Bez AS Typ, Preis
+--FROM Bike b
+--INNER JOIN Marke m ON m.MarkeId = b.fk_MarkeId
+--INNER JOIN Typ t ON t.TypId = b.fk_TypId
+--ORDER BY m.Bez ASC, t.Bez ASC, b.Bez ASC;
+
+
+--Aufgabe 7
+--SELECT m.Bez AS Marke, b.Bez AS Bike, t.Bez AS Typ, Preis
+--FROM Bike b
+--INNER JOIN Marke m ON m.MarkeId = b.fk_MarkeId
+--INNER JOIN Typ t ON t.TypId = b.fk_TypId
+--WHERE fk_MarkeId = 4
+--ORDER BY Preis DESC;
+
+
+--Aufgabe 8
+--SELECT t.Bez AS Typ, AVG(Preis) AS Durchschnittpreis
+--FROM Bike
+--INNER JOIN Typ t ON fk_TypId = t.TypId
+--WHERE fk_TypId = 2
+--GROUP BY t.Bez;
+
+
+--Aufgabe 9
+--SELECT m.Bez AS Marke, COUNT(*) AS Anzahl
+--FROM Bike
+--INNER JOIN Marke m ON fk_MarkeID = m.MarkeId
+--GROUP BY m.Bez
+--ORDER BY Anzahl DESC;
+
+
+--Aufgabe 10
+--SELECT t.Bez AS Typ
+--FROM Typ t
+--LEFT JOIN Bike b ON b.fk_TypId = t.TypId
+--WHERE b.fk_TypId IS NULL;
+
+
+--Aufgabe 11
