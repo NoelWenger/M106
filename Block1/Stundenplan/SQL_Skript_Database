@@ -243,5 +243,30 @@ insert into KlHatFa (fk_KlasseId, fk_FachId, fk_LehrpersonId, fk_RaumId) values
 
 
 --Aufgabe 6
+--SELECT k.Bez AS Klasse, f.KurzBez AS Fachkurz, f.LangBez AS Fach, l.Vorname + ' ' + l.Nachname AS Lehrperson, r.Bez AS Raum
+--FROM KlHatFa kl
+--INNER JOIN Klasse k ON fk_KlasseId = k.KlasseId
+--INNER JOIN Fach f ON fk_FachId = f.FachId
+--INNER JOIN Lehrperson l ON kl.fk_LehrpersonId = l.LehrpersonId
+--INNER JOIN Raum r ON fk_RaumId = r.RaumId
+--WHERE k.Bez = 'MMA1a'
+--ORDER BY f.KurzBez
+
+
 --Aufgabe 7
+--SELECT Vorname, Nachname
+--FROM Lehrperson
+--LEFT JOIN KlHatFa kl ON LehrpersonId = kl.fk_LehrpersonId
+--WHERE kl.fk_FachId IS NULL
+--ORDER BY Nachname, Vorname
+--Das habe ich auch noch nicht ganz verstanden
+
+
 --Aufgabe 8
+--SELECT k.Bez AS Klasse, Vorname, Nachname
+--FROM Lehrperson
+--INNER JOIN Klasse k ON LehrpersonId = k.fk_LehrpersonId
+--LEFT JOIN KlHatFa kl ON kl.fk_LehrpersonId = LehrpersonId AND kl.fk_KlasseId = k.KlasseId
+--WHERE kl.KlHatFaId IS NULL
+--ORDER BY k.Bez
+--Das habe ich überhaupt nicht verstanden
